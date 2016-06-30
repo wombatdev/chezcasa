@@ -21,10 +21,15 @@ ActiveRecord::Schema.define(version: 20160627162325) do
     t.string   "photo_url",                null: false
     t.string   "ingredients", default: [], null: false, array: true
     t.string   "tags",        default: [],              array: true
+    t.string   "category",    default: [], null: false, array: true
+    t.integer  "price",                    null: false
+    t.string   "portion",                  null: false
+    t.integer  "quantity",                 null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
+  add_index "dishes", ["category"], name: "index_dishes_on_category", using: :btree
   add_index "dishes", ["ingredients"], name: "index_dishes_on_ingredients", using: :btree
 
   create_table "ingredients", force: :cascade do |t|
@@ -34,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160627162325) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                     null: false
-    t.string   "location",                 null: false
+    t.integer  "zip_code",                 null: false
     t.string   "photo_url"
     t.string   "ethnicities", default: [], null: false, array: true
     t.datetime "created_at",               null: false

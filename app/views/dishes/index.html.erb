@@ -1,1 +1,4 @@
-dish index
+
+<h2>Dishes <%= link_to "(+)", new_dish_path %></h2>
+
+<%= render partial: "dish", collection: @dishes %>
