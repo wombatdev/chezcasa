@@ -1,0 +1,30 @@
+
+<%= form_for @dish do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br>
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+<br>
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+<br>
+  <%= f.label :tags %>
+  <%= f.text_field :tags %>
+<br>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+<br>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+<br>
+  <%= f.label :portion %>
+  <%= f.text_field :portion %>
+<br>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+<br>
+  <%= f.submit %>
+
+<% end %>

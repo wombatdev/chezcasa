@@ -14,17 +14,64 @@
  *= require_self
  */
 
+@import 'https://fonts.googleapis.com/css?family=Oswald';
 
+body {
+    font-family: 'Oswald', sans-serif;
+}
 
+nav {
+    display: flex;
+    flex-direction: row;
+}
 
- nav a {
-   border: 1px solid black;
-   margin: .5em;
-   padding: .5em;
-   background-color: #eeeeee;
- }
+nav a {
+    border: 1px solid black;
+    margin: .5em;
+    padding: .5em;
+    background-color: #eeeeee;
+}
 
- nav a:hover {
-   background-color: orange;
-   color: blue;
- }
+nav a:hover {
+    background-color: orange;
+    color: blue;
+}
+
+.dish {
+    /*display: flex;
+    flex-direction: column;*/
+    float: left;
+    margin: 5px;
+}
+
+.dish h3 {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.dish h3 a {
+    text-decoration: none;
+    color: black;
+}
+
+.dish h3 a:hover {
+    color: rgb(38,50,56);
+}
+
+.dish img {
+    height: 200px;
+}
+
+form {
+    line-height: 2em;
+}
+
+form label {
+    margin: 5px 10px 5px 5px;
+}
+
+form input {
+    margin: 5px 10px 5px 5px;
+    padding: 4px;
+}
