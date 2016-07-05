@@ -1,5 +1,7 @@
 
 <div class="dish">
-    <h3><%= link_to dish.name, dish_path(dish) %></h3>
-    <%= image_tag dish.photo_url %>
+    <%= link_to dish_path(dish) do %>
+    <h3><%=dish.name%></h3>
+    <% end %>
+    <%= link_to (image_tag(dish.photo_url)), dish_path(dish) %>
 </div>

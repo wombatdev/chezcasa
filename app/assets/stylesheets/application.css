@@ -48,14 +48,11 @@ nav a:hover {
     width: 200px;
     padding: 10px;
     border: 1px solid black;
-}
-
-.dish h3 a {
-    text-decoration: none;
     color: black;
+    text-decoration: none;
 }
 
-.dish h3 a:hover {
+.dish h3:hover {
     color: rgb(38,50,56);
 }
 
@@ -74,4 +71,39 @@ form label {
 form input {
     margin: 5px 10px 5px 5px;
     padding: 4px;
+}
+
+.imageAndIngredients {
+    display: flex;
+    flex-direction: row;
+}
+
+.imageAndIngredients img {
+    height: 100%;
+    width: auto;
+}
+
+.ingredientsBox {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredientsBox h3, .ingredientsBox ul {
+    margin: 5px auto;
+}
+
+.description {
+    width: 50%;
+}
+
+.catsAndTags {
+    display: flex;
+    flex-direction: row;
+}
+
+.categoryBox, .tagBox {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
 }

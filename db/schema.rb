@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705132702) do
+ActiveRecord::Schema.define(version: 20160705134551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,15 @@ ActiveRecord::Schema.define(version: 20160705132702) do
     t.integer  "price",                    null: false
     t.string   "portion",                  null: false
     t.integer  "quantity",                 null: false
+    t.integer  "user_id",                  null: false
+    t.text     "description",              null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
   add_index "dishes", ["category"], name: "index_dishes_on_category", using: :btree
   add_index "dishes", ["ingredients"], name: "index_dishes_on_ingredients", using: :btree
+  add_index "dishes", ["user_id"], name: "index_dishes_on_user_id", using: :btree
 
   create_table "ingredients", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,22 +41,23 @@ ActiveRecord::Schema.define(version: 20160705132702) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                                null: false
-    t.integer  "zip_code",                            null: false
+    t.string   "name",                                    null: false
+    t.integer  "zip_code",                                null: false
     t.string   "photo_url"
-    t.string   "ethnicities",            default: [], null: false, array: true
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "ethnicities",            default: [],     null: false, array: true
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "email",                  default: "",     null: false
+    t.string   "encrypted_password",     default: "",     null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,      null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "role",                   default: "user"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

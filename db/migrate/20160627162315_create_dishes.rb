@@ -9,6 +9,8 @@ class CreateDishes < ActiveRecord::Migration
         t.integer :price, null: false
         t.string :portion, null: false
         t.integer :quantity, null: false
+        t.references :user, index: true, null: false
+        t.text :description, null: false, length: {minimum: 40}
         t.timestamps null: false
     end
   end

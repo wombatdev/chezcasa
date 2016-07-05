@@ -1,1 +1,42 @@
-show dish
+
+<h2><%= @dish.name %>!
+    <% if @dish.user == current_user %>
+    <%= link_to "(edit)", edit_dish_path(@dish) %>
+    <% else %>
+     - <% @dish.user %>
+     <%end%></h2>
+
+<section class="imageAndIngredients">
+<%= image_tag(@dish.photo_url, :class => "dishImage") %>
+
+<div class="ingredientsBox">
+    <h3>Ingredients:</h3>
+    <ul class="ingredientList">
+        <% @dish.ingredients.each do |ingredient| %>
+            <li><%= ingredient %></li>
+        <% end %>
+    </ul>
+</div>
+</section>
+
+<h3>Description</h3>
+<p class="description"><%= @dish.description %></p>
+
+<section class="catsAndTags">
+    <div class="categoryBox">
+        <h4>Categories:</h4>
+        <ul class="categories">
+            <% @dish.category.each do |category| %>
+                <li><%= category %></li>
+            <% end %>
+        </ul>
+    </div>
+    <div class="tagBox">
+        <h4>Tags:</h4>
+        <ul class="tags">
+            <% @dish.tags.each do |tag| %>
+                <li><%= tag %></li>
+            <% end %>
+        </ul>
+    </div>
+</section>
