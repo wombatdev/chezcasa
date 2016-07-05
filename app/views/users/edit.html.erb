@@ -1,1 +1,33 @@
-edit user
+
+<h2>Edit Profile</h2>
+
+<%= form_for @user do |f| %>
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :zip_code %><br />
+  <%= f.text_field :zip_code %>
+</div>
+
+<div class="field">
+  <%= f.label :photo_url %><br />
+  <%= f.text_field :photo_url %>
+</div>
+
+<div class="field">
+    <% 6.times do |n| %>
+      <% if @user.ethnicities[n] %>
+          <input name="user[ethnicities][]" type="text" value="<%=@user.ethnicities[n]%>"/>
+      <% else %>
+          <input name="user[ethnicities][]" type="text"/>
+      <% end %>
+    <% end %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Update" %>
+</div>
+<% end %>

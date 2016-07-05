@@ -8,13 +8,31 @@
   <%= f.text_field :photo_url %>
 <br>
   <%= f.label :ingredients %>
-  <%= f.text_field :ingredients %>
+  <% 15.times do |n| %>
+    <% if @dish.ingredients[n] %>
+        <input name="dish[ingredients][]" type="text" value="<%=@dish.ingredients[n]%>"/>
+    <% else %>
+        <input name="dish[ingredients][]" type="text"/>
+    <% end %>
+  <% end %>
 <br>
-  <%= f.label :tags %>
-  <%= f.text_field :tags %>
+<%= f.label :tags %>
+<% 6.times do |n| %>
+  <% if @dish.tags[n] %>
+      <input name="dish[tags][]" type="text" value="<%=@dish.tags[n]%>"/>
+  <% else %>
+      <input name="dish[tags][]" type="text"/>
+  <% end %>
+<% end %>
 <br>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
+<%= f.label :category %>
+<% 6.times do |n| %>
+  <% if @dish.category[n] %>
+      <input name="dish[category][]" type="text" value="<%=@dish.category[n]%>"/>
+  <% else %>
+      <input name="dish[category][]" type="text"/>
+  <% end %>
+<% end %>
 <br>
   <%= f.label :price %>
   <%= f.text_field :price %>

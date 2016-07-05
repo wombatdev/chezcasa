@@ -3,7 +3,7 @@
     <% if @dish.user == current_user %>
     <%= link_to "(edit)", edit_dish_path(@dish) %>
     <% else %>
-     - <% @dish.user %>
+     - <%= @dish.user.name %>
      <%end%></h2>
 
 <section class="imageAndIngredients">

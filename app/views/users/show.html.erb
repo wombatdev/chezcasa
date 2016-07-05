@@ -1,1 +1,52 @@
-show user
+<section class="userShow">
+<h2><%= @user.name %>
+    <% if current_user == @user %>
+     -
+     <%= link_to("(edit profile)", edit_user_path(@user)) %>
+     <%end%></h2>
+
+<div class="dishesYouCooked">
+    <% 5.times do |n| %>
+        <%= link_to dish_path(@user.dishes.sort_by{|x| [x.updated_at] }.reverse[n]) do %>
+        <div class="cookedDishBox">
+            <h4><%= @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n].name %></h4>
+            <%= image_tag @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n].photo_url %>
+        </div>
+        <% end %>
+    <% end %>
+</div>
+<div class="dishesYouCooked">
+    <% 5.times do |n| %>
+        <%= link_to dish_path(@user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5]) do %>
+        <div class="cookedDishBox">
+            <h4><%= @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5].name %></h4>
+            <%= image_tag @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5].photo_url %>
+        </div>
+        <% end %>
+    <% end %>
+</div>
+
+<h4>Email:</h4>
+<p><%= @user.email %></p>
+<p>To edit your email and/or password, click
+    <% if current_user == @user %>
+    <%= link_to("here", edit_user_registration_path(@user)) %>
+    <%end%>
+    .</p>
+
+<h4>Zip Code:</h4>
+<p><%= @user.zip_code %></p>
+
+<h4>Photo:</h4>
+<p><%= image_tag @user.photo_url %></p>
+
+<h4>Ethnicities:</h4>
+<ul>
+<% @user.ethnicities.each do |ethnicity| %>
+<li><%=ethnicity%></li>
+<% end %>
+</ul>
+
+<h4>Role:</h4>
+<p><%= @user.role %></p>
+</section>

@@ -37,11 +37,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :ethnicities %><br />
-    <%= check_box_tag(:ethnicities) %>
-    <%= label_tag(:mexican, "Mexican") %>
-    <%= check_box_tag(:ethnicities) %>
-    <%= label_tag(:italian, "Italian") %>
+      <% 6.times do |n| %>
+        <% if @user.ethnicities[n] %>
+            <input name="user[ethnicities][]" type="text" value="<%=@user.ethnicities[n]%>"/>
+        <% else %>
+            <input name="user[ethnicities][]" type="text"/>
+        <% end %>
+      <% end %>
   </div>
 
   <div class="actions">
