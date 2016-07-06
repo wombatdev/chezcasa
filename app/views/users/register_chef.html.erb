@@ -1,0 +1,12 @@
+
+<h4>Would you like to be a chef for Chezcasa?</h4>
+
+<p>Just click Yes below!</p>
+
+<%= form_for @user do |f| %>
+
+<%= f.hidden_field :role, :value=>"chef" %>
+
+<%= f.submit "Yes" %>
+
+<% end %>

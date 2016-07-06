@@ -33,6 +33,10 @@ class DishesController < ApplicationController
         redirect_to dishs_path
     end
 
+    def purchase
+
+    end
+
     private
     def dish_params
         params.require(:dish).permit(:name, :photo, {:ingredients => []}, {:tags => []}, {:category => []}, :price, :portion, :quantity, :user_id, :description)

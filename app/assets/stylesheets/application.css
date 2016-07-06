@@ -137,8 +137,13 @@ form input {
     height: auto;
 }
 
+.chefList {
+    display: inline-flex;
+    width: 90%;
+}
+
 .userBox {
-    width: 25%;
+    width: 50%;
     height: auto;
     display: flex;
     flex-direction: row;
