@@ -1,5 +1,17 @@
 
-<div class="cookedDishBox">
+<div class="userBox">
+    <div class="userNameAndPhoto">
     <h3><%= user.name %> - <%= user.zip_code %></h3>
-    <%= image_tag user.photo.url %>
+    <%= image_tag user.photo.url(:thumb) %>
+    </div>
+    <div class="userCats">
+        <h4>Ethnicities Cooked:</h4>
+        <ul>
+            <% user.dishes.each do |dish| %>
+                <% dish.category.each do |cat| %>
+                <li><%= cat %></li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
 </div>

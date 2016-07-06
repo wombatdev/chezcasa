@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
     has_many :dishes
 
-    has_attached_file :photo, styles: { :small => "400x400>"}
+    has_attached_file :photo, styles: { :small => "400x400>", :thumb => "200x200>"}
     validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
     before_save :remove_blanks_from_arrays

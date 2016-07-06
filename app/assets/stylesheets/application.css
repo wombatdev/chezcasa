@@ -136,3 +136,24 @@ form input {
     width: 100%;
     height: auto;
 }
+
+.userBox {
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    max-height: 300px;
+    margin: 5px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.userNameAndPhoto {
+    display: flex;
+    flex-direction: column;
+}
+
+.userCats {
+    display: flex;
+    flex-direction: column;
+}
