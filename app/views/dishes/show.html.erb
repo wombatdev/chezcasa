@@ -1,5 +1,5 @@
 
-<h2><%= @dish.name %>!
+<h2 class="pageHeader"><%= @dish.name %>!
     <% if @dish.user == current_user %>
     <%= link_to "(edit)", edit_dish_path(@dish) %>
     <% else %>

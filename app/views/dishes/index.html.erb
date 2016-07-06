@@ -1,4 +1,4 @@
 
-<h2 class="dishIndexHeader">Dishes</h2>
+<h2 class="pageHeader">Dishes</h2>
 
 <%= render partial: "dish", collection: @dishes.sort_by{|x| [x.updated_at] }.reverse %>

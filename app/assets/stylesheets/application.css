@@ -77,10 +77,11 @@ nav li:hover {
     position: absolute;
     top: 3.6em;
     left: 1em;
+    padding: 0.75em;
     height: 2.5em;
 }
 
-.dishIndexHeader {
+.pageHeader {
     margin-top: 3em;
 }
 
@@ -208,4 +209,9 @@ form input {
 .userCats {
     display: flex;
     flex-direction: column;
+}
+
+.foodDesc {
+    width: 600px;
+    height: 200px;
 }

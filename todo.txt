@@ -5,4 +5,6 @@ Features to Implement:
 3) Add dishes to a map
 4) Search dishes by location
 5) Fix user email/password update problem
-6) Implement purchasing
+6) Add allergies!
+7) Create expiration columns and implement
+8) Implement purchasing
