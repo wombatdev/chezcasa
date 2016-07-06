@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706133147) do
+ActiveRecord::Schema.define(version: 20160706151632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dishes", force: :cascade do |t|
     t.string   "name",                            null: false
-    t.string   "photo_url",                       null: false
     t.string   "ingredients",        default: [], null: false, array: true
     t.string   "tags",               default: [],              array: true
     t.string   "category",           default: [], null: false, array: true
@@ -29,10 +28,10 @@ ActiveRecord::Schema.define(version: 20160706133147) do
     t.text     "description",                     null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
+    t.string   "photo_file_name",                 null: false
+    t.string   "photo_content_type",              null: false
+    t.integer  "photo_file_size",                 null: false
+    t.datetime "photo_updated_at",                null: false
   end
 
   add_index "dishes", ["category"], name: "index_dishes_on_category", using: :btree
@@ -62,6 +61,10 @@ ActiveRecord::Schema.define(version: 20160706133147) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "role",                   default: "user"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

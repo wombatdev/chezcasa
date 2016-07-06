@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
     devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     has_many :dishes
+
+    has_attached_file :photo, styles: { :small => "400x400>"}
+    validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+
     before_save :remove_blanks_from_arrays
 
     private

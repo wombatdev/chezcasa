@@ -1,1 +1,4 @@
-user index
+
+<h2>Check out the Chezcasa chefs!</h2>
+
+<%= render partial: "user", collection: @users.sort_by{|x| [x.role = 'chef'] } %>

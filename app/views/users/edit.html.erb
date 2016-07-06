@@ -1,7 +1,7 @@
 
 <h2>Edit Profile</h2>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => {:multipart => true} do |f| %>
 <div class="field">
   <%= f.label :name %><br />
   <%= f.text_field :name %>
@@ -13,11 +13,12 @@
 </div>
 
 <div class="field">
-  <%= f.label :photo_url %><br />
-  <%= f.text_field :photo_url %>
+  <%= f.label :photo %><br />
+  <%= f.file_field :photo %>
 </div>
 
 <div class="field">
+    <%= f.label :ethnicities %><br />
     <% 6.times do |n| %>
       <% if @user.ethnicities[n] %>
           <input name="user[ethnicities][]" type="text" value="<%=@user.ethnicities[n]%>"/>

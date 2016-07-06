@@ -13,7 +13,7 @@ class DishesController < ApplicationController
     end
 
     def create
-        @dish = Dish.create!(dish_params)
+        @dish = Dish.create!(dish_params.merge(user_id: current_user.id))
         redirect_to @dish
     end
 
@@ -35,7 +35,7 @@ class DishesController < ApplicationController
 
     private
     def dish_params
-        params.require(:dish).permit(:name, :photo_url, {:ingredients => []}, {:tags => []}, {:category => []}, :price, :portion, :quantity, :user, :description)
+        params.require(:dish).permit(:name, :photo, {:ingredients => []}, {:tags => []}, {:category => []}, :price, :portion, :quantity, :user_id, :description)
     end
 
 end

@@ -1,7 +1,7 @@
 class AddAttachmentPhotoToDishes < ActiveRecord::Migration
   def self.up
     change_table :dishes do |t|
-      t.attachment :photo
+      t.attachment :photo, null: false
     end
   end
 

@@ -6,8 +6,11 @@
      - <%= @dish.user.name %>
      <%end%></h2>
 
+<h3>$<%= @dish.price %> for <%= @dish.portion %></h3>
+<h4><%= @dish.quantity %> available!</h4>
+
 <section class="imageAndIngredients">
-<%= image_tag(@dish.photo_url, :class => "dishImage") %>
+<%= image_tag(@dish.photo.url, :class => "dishImage") %>
 
 <div class="ingredientsBox">
     <h3>Ingredients:</h3>

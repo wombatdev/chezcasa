@@ -4,27 +4,33 @@
      -
      <%= link_to("(edit profile)", edit_user_path(@user)) %>
      <%end%></h2>
-
-<div class="dishesYouCooked">
-    <% 5.times do |n| %>
-        <%= link_to dish_path(@user.dishes.sort_by{|x| [x.updated_at] }.reverse[n]) do %>
-        <div class="cookedDishBox">
-            <h4><%= @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n].name %></h4>
-            <%= image_tag @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n].photo_url %>
-        </div>
+<% if @user.dishes != [] %>
+<h3>Dishes Offered:</h3>
+    <div class="dishesYouCooked">
+        <% 5.times do |n| %>
+            <% if @user.dishes[n] != nil %>
+            <%= link_to dish_path(@user.dishes.sort_by{|x| [x.updated_at] }.reverse[n]) do %>
+            <div class="cookedDishBox">
+                <h4><%= @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n].name %></h4>
+                <%= image_tag @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n].photo.url %>
+            </div>
+            <% end %>
+            <% end %>
         <% end %>
-    <% end %>
-</div>
-<div class="dishesYouCooked">
-    <% 5.times do |n| %>
-        <%= link_to dish_path(@user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5]) do %>
-        <div class="cookedDishBox">
-            <h4><%= @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5].name %></h4>
-            <%= image_tag @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5].photo_url %>
-        </div>
+    </div>
+    <div class="dishesYouCooked">
+        <% 5.times do |n| %>
+            <% if @user.dishes[n+5] != nil %>
+            <%= link_to dish_path(@user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5]) do %>
+            <div class="cookedDishBox">
+                <h4><%= @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5].name %></h4>
+                <%= image_tag @user.dishes.sort_by{|x| [x.updated_at] }.reverse[n+5].photo.url %>
+            </div>
+            <% end %>
+            <% end %>
         <% end %>
-    <% end %>
-</div>
+    </div>
+<% end %>
 
 <h4>Email:</h4>
 <p><%= @user.email %></p>
@@ -38,7 +44,7 @@
 <p><%= @user.zip_code %></p>
 
 <h4>Photo:</h4>
-<p><%= image_tag @user.photo_url %></p>
+<p><%= image_tag @user.photo.url(:small) %></p>
 
 <h4>Ethnicities:</h4>
 <ul>
