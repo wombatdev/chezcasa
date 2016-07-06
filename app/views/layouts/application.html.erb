@@ -2,26 +2,15 @@
 <html>
 <head>
     <title>Chezcasa</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
 <body>
-    <!-- <nav>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %>
-        <%= link_to "Log In", new_user_session_path if !current_user %>
-        <%= link_to "Sign Up", new_user_registration_path if !current_user %>
-        <%= link_to "My Profile", user_path(current_user) if current_user %>
-        <%= link_to "Register as a Chef!", register_chef_user_path(current_user) if current_user && current_user.role != "chef" %>
-        <%= link_to "Chefs", users_path %>
-        <%= link_to "Post a Dish!", new_dish_path if can? :create, :dish %>
-        <%= link_to "Dishes", dishes_path %>
-        <%= image_tag "cc_logo.png" %>
-    </nav> -->
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,37 +19,52 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/dishes">Chezcasa</a>
+          <span class="navbar-brand"><%= image_tag "cc_logo.png" %></span>
+          <span class="navbar-title">Chezcasa</span>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <!-- <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form> -->
-          <ul>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %></li>
-              <li><%= link_to "Log In", new_user_session_path if !current_user %></li>
-              <li><%= link_to "Sign Up", new_user_registration_path if !current_user %></li>
-              <li><%= link_to "My Profile", user_path(current_user) if current_user %></li>
-              <li><%= link_to "Register as a Chef!", register_chef_user_path(current_user) if current_user && current_user.role != "chef" %></li>
-              <li><%= link_to "Chefs", users_path %></li>
-              <li><%= link_to "Post a Dish!", new_dish_path if can? :create, :dish %></li>
-              <li><%= link_to "Dishes", dishes_path %></li>
-              <li><%= image_tag "cc_logo.png" %></li>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/dishes">Home</a></li>
+            <li><%= link_to "Dishes", dishes_path %></li>
+            <% if can? :create, :dish %><li><%= link_to "Post a Dish!", new_dish_path %></li> <% end %>
+            <li><%= link_to "Chefs", users_path %></li>
+            <% if current_user && current_user.role != "chef" %><li><%= link_to "Register as a Chef!", register_chef_user_path(current_user) %></li> <% end %>
+            <% if current_user %><li><%= link_to "My Profile", user_path(current_user) %></li> <% end %>
+            <% if !current_user %><li><%= link_to "Sign Up", new_user_registration_path %></li> <% end %>
+            <% if !current_user %><li><%= link_to "Log In", new_user_session_path %></li> <% end %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li> -->
           </ul>
-        </div><!--/.navbar-collapse -->
+        </div><!--/.nav-collapse -->
       </div>
     </nav>
+          <!-- <ul>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %></li>
+              <% if !current_user %><li><%= link_to "Log In", new_user_session_path %></li> <% end %>
+              <% if !current_user %><li><%= link_to "Sign Up", new_user_registration_path %></li> <% end %>
+              <% if current_user %><li><%= link_to "My Profile", user_path(current_user) %></li> <% end %>
+              <% if current_user && current_user.role != "chef" %><li><%= link_to "Register as a Chef!", register_chef_user_path(current_user) %></li> <% end %>
+              <li><%= link_to "Chefs", users_path %></li>
+              <% if can? :create, :dish %><li><%= link_to "Post a Dish!", new_dish_path %></li> <% end %>
+              <li><%= link_to "Dishes", dishes_path %></li>
+              <li><%= image_tag "cc_logo.png" %></li>
+          </ul> -->
 
-    <h1>Chezcasa</h1>
-
+<div class="container flashes">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+</div>
 
 <%= yield %>
 

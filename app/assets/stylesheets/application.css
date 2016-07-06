@@ -15,12 +15,14 @@
  */
 
 @import 'https://fonts.googleapis.com/css?family=Oswald';
+@import 'https://fonts.googleapis.com/css?family=Galada';
 
 body {
     font-family: 'Oswald', sans-serif;
+    margin-left: 1em;
 }
 
-nav {
+/*nav {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -31,30 +33,55 @@ nav {
     width: 100%;
     background-color: gray;
     height: 2.6em;
-}
+}*/
 
-nav a {
+/*nav li {
     border: 1px solid black;
     padding: .5em;
     background-color: #eeeeee;
     font-size: 1em;
     float: right;
-}
+}*/
 
-nav a:hover {
+nav li:hover {
     background-color: orange;
     color: blue;
 }
 
-nav img {
-    height: 2.6em;
-    width: auto;
-    float: left;
-    /*border-radius: 5px;*/
+
+.navbar-nav {
+    float: right;
 }
 
-h1 {
-    margin-top: 1.4em;
+.navbar-brand img {
+    /*margin-top: -0.85em;
+    margin-left: -5.33em;*/
+    position: absolute;
+    left: 2px;
+    top: 0px;
+    height: 2.85em;
+    width: auto;
+}
+
+.navbar-title {
+    position: absolute;
+    left: 20%;
+    top: 5px;
+    height: 2.85em;
+    width: auto;
+    font-size: 2.5em;
+    font-family: 'Galada', sans-serif;
+}
+
+.flashes {
+    position: absolute;
+    top: 3.6em;
+    left: 1em;
+    height: 2.5em;
+}
+
+.dishIndexHeader {
+    margin-top: 3em;
 }
 
 .dish {
