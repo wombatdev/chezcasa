@@ -1,5 +1,7 @@
 Features to Implement:
 
+-1) Create a home and about page
+0) Update all CSS continuously
 1) Standardize ethnicities/categories
 2) Make the ethnicities/categories/tags searchable
 3) Add dishes to a map
