@@ -30,7 +30,7 @@ class DishesController < ApplicationController
     def destroy
         @dish = Dish.find(params[:id])
         @dish.destroy
-        redirect_to dishs_path
+        redirect_to dishes_path
     end
 
     def purchase

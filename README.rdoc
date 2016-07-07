@@ -1,28 +1,30 @@
-== README
+== Chezcasa
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Chezcasa is a web app that lets people post food they've cooked at home.
 
-Things you may want to cover:
+When I cook, I often cook too much, but I'm not great at eating leftovers. With Chezcasa, I could post that extra food and sell it at a low price to my neighbors. No food goes to waste, I cover some of the cost of ingredients and time, and my hungry customers get a tasty, healthy, homecooked meal.
 
-* Ruby version
+Think of it as Uber for your kitchen!
 
-* System dependencies
+<h3>Technologies Used</h3>
 
-* Configuration
+Ruby
+Rails
+PostgreSQL
+ActiveRecord
+CSS
+HTML
 
-* Database creation
+<h3>Approach Taken</h3>
 
-* Database initialization
+As per usual, I starting coding straight away with little planning. The DB setup didn't take very long, so most of the rest of the time was spent building pages in Rails and updating the styling in CSS. Towards the end, I transitioned to Bootstrap for better-looking pages.
 
-* How to run the test suite
+I began with a separate Chef class, but ended up implementing CanCanCan to make being a chef an ability within the user class.
 
-* Services (job queues, cache servers, search engines, etc.)
+<h3>Unsolved Problems</h3>
 
-* Deployment instructions
+I have an issue with Devise where I am unable to update my registration email or password.
 
-* ...
+Besides that, my unsolved issues are mostly related to the time constraints. I have many features yet to implement, which can be found in the todo.txt file in the base folder of this repo.
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+<h3>Feedback would be awesome!! Feel free to submit issues/questions/comments/random ideas!</h3>

@@ -6,7 +6,7 @@
      - <%= @dish.user.name %>
      <%end%></h2>
 
-<h3>$<%= @dish.price %> for <%= @dish.portion %> --- <%= link_to "Purchase Now!", purchase_dish_path(@dish) %></h3>
+<h3>$<%= @dish.price %> for <%= @dish.portion %><% if current_user %> --- <%= link_to "Purchase Now!", purchase_dish_path(@dish) %><%end%></h3>
 <h4><%= @dish.quantity %> available!</h4>
 
 <section class="imageAndIngredients">

@@ -1,0 +1,15 @@
+User Stories
+
+As a user, I should be able to:
+
+1) See food that my neighbors have for sale
+2) Click on a picture of a dish to get more info
+3) See the price and portion size of a dish I am interested in
+4) Click a link to purchase that dish
+
+As a chef, I should be able to:
+
+1) Post dishes that I've cooked
+2) Choose a price for my dish
+3) Edit my dish to update information
+4) Delete a dish I have posted
