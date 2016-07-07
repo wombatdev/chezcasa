@@ -1,4 +1,4 @@
-== Chezcasa
+# Chezcasa
 
 Chezcasa is a web app that lets people post food they've cooked at home.
 
