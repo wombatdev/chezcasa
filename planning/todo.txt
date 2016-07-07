@@ -1,5 +1,6 @@
 Features to Implement:
 
+-2) Transition to Amazon S3 image storage
 -1) Create a home and about page
 0) Update all CSS continuously
 1) Standardize ethnicities/categories
