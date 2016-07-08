@@ -28,6 +28,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 
 gem "rails_12factor", group: :production
 
